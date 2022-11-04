@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import Header from "./componets/Header";
+import MainBlock from "./componets/Main-block";
+import Additional from "./componets/Additional";
+import WeakWeather from "./componets/Weak-weather";
+import {Style} from "./style/Style";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    const [currentTemp, setCurrentTemp] = useState('');
+    const [currentTheme, setCurrentTheme] = useState(`dark`);
+
+    return (
+    <div className={`${Style.RootBlock} ${Style.darkMode.backg}`}>
+        <Header setCurrentTemp={setCurrentTemp} setCurrentTheme={setCurrentTheme}/>
+        <MainBlock currentTemp={currentTemp}/>
+        <Additional currentTheme={currentTheme}/>
+        <WeakWeather/>
     </div>
   );
 }
