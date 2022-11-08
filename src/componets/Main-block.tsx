@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {useCustomSelector} from "../hooks/store";
 import {Style} from "../style/Style";
 import DayHours from "./dayInfo/DayHours";
-import {DataFormat, CurrentTime} from "./dayInfo/DataFormat";
+import {CurrentTime, CurrentData} from "./dayInfo/DataFormat";
 
 interface  MainBLockProps {
     currentTemp: string;
@@ -16,7 +16,7 @@ const MainBlock: FC<MainBLockProps> = ({currentTemp}) => {
         <div>
             <div className={`${Style.Main.MainBlock} ${Style.darkMode.backb}`}>
                 <div className={Style.Main.PicturePart}>
-                    <p className={`${Style.Main.data}, flex w-[310px] justify-between`}><DataFormat/><CurrentTime/></p>
+                    <p className={`${Style.Main.data}, flex w-[310px] justify-between`}><CurrentData dayNumber={0}/><CurrentTime/></p>
                     <div>
                         <img src = {weather.forecast.forecastday[0].day.condition.icon}  alt="" className="w-[250px]"/>
                     </div>

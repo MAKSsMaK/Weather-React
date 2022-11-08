@@ -14,20 +14,6 @@ const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 /*------------------------------------------------------------------------------*/
 
 const date: Date = new Date()
-const day = date.getDate()
-const month = months[date.getMonth() - 1]
-const year = date.getFullYear()
-
-/*------------------------------------------------------------------------------*/
-
-export const DataFormat = () => {
-    const formatDate: string = `${day} ${month}, ${year}`
-    return (
-        <div>
-            {formatDate}
-        </div>
-    );
-};
 
 /*------------------------------------------------------------------------------*/
 
